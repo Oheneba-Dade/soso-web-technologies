@@ -12,15 +12,15 @@
 </head>
 
 <body>
-  <nav class="navbar container">
-    <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
-      <div class="d-flex" role="search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </div>
-    </div>
-  </nav>
   <div class="container">
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Dua</a>
+        <div class="d-flex" role="search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+      </div>
+    </nav>
     <main>
 
       <?php
@@ -62,28 +62,6 @@
 
 
       ?>
-      <!-- <div style="display: flex; justify-content: space-between;">
-        <div class="card" style="width: 12em; ">
-          <img src="assets/green-plant.png" alt="">
-          <p>lorem</p>
-        </div>
-        <div class="card" style="width: 12em; ">
-          <img src="assets/green-plant.png" alt="">
-          <p>lorem</p>
-        </div>
-        <div class="card" style="width: 12em; ">
-          <img src="assets/green-plant.png" alt="">
-          <p>lorem</p>
-        </div>
-        <div class="card" style="width: 12em; ">
-          <img src="assets/green-plant.png" alt="">
-          <p>lorem</p>
-        </div>
-        <div class="card" style="width: 12em; ">
-          <img src="assets/green-plant.png" alt="">
-          <p>lorem</p>
-        </div>
-      </div> -->
     </main>
   </div>
 

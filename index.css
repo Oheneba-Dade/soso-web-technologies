@@ -149,3 +149,7 @@ footer a {
     text-decoration: underline;
 }
 
+.carousel-img {
+    width: 20%;
+    margin: auto;
+}
