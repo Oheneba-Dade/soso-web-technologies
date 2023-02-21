@@ -16,7 +16,7 @@
     <div class="container">
       <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Dua</a>
+          <a class="navbar-brand" href="index.php">Dua</a>
           <div class="d-flex" role="search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </div>
