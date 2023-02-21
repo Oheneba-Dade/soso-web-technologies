@@ -15,7 +15,7 @@
   <div class="container">
     <nav class="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Dua</a>
+        <a class="navbar-brand" href="index.php">Dua</a>
         <div class="d-flex" role="search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </div>
@@ -34,9 +34,10 @@
       echo "<div class='categories'>";
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-          echo "<div class='card'>";
+          $id = $row['product_id'];
+          echo "<div class='card'  >";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
-          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
+          echo "<a href='product.php?pid=$id' class='product-name'>" . $row['product_name'] . "</a>";
           echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
         }
@@ -48,9 +49,10 @@
       echo "<div class='categories'>";
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
+          $id = $row['product_id'];
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
-          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
+          echo "<a href='product.php?pid=$id' class='product-name'>" . $row['product_name'] . "</a>";
           echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
         }

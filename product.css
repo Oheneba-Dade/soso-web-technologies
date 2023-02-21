@@ -30,37 +30,8 @@
     background: #98BF4A;
 }
 
-
 body {
     font-family: 'Poppins', sans-serif;
-}
-
-h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 1em 0;
-    color: #98BF4A;
-}
-
-img {
-    width: 100%
-}
-
-footer {
-    margin-top: 5em;
-    background-color: #165166;
-    color: white;
-    padding-top: 2em;
-}
-
-footer a {
-    color: white;
-    text-decoration: underline;
-}
-
-.card {
-    width: 16em;
-    height: 21em;
 }
 
 .navbar-brand {
@@ -75,29 +46,52 @@ footer a {
     cursor: pointer;
 }
 
-.card p {
+.product {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1em 0;
     color: #165166;
 }
 
-.product-name {
-    font-weight: 800;
-    font-size: 1.2rem;
-    padding: 0 0.5em;
-    color:#165166
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1em 0;
+    color: #165166;
 }
 
-.product-details {
-    font-size: 1rem;
-    padding: 0 0.8em;
-}
-
-.categories {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    margin-bottom: 1em;
-    row-gap: 2em;
-}
-
-a {
+.alternate-green {
+    color: #FFFFFF;
     text-decoration: none;
+    width: 30rem;
+    background-color: #98BF4A;
+    border-radius: 10px;
+    padding: 1em 1em;
+    margin: 0 1em;
 }
+
+.primary-green {
+    color: #98BF4A;
+    text-decoration: none;
+    width: 30rem;
+    border: 1px solid #98BF4A;
+    border-radius: 10px;
+    padding: 1em 1em;
+    margin: 0 1em;
+}
+
+.primary-green:hover {
+    color: #FFFFFF;
+    background-color: #98BF4A;
+    cursor: pointer;
+}
+
+
