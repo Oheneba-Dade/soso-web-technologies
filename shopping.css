@@ -54,3 +54,8 @@ footer a {
     color: white;
     text-decoration: underline;
 }
+
+.card {
+    width: 16em; 
+    height: 21em;
+}
