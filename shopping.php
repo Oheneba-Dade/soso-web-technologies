@@ -31,13 +31,13 @@
       $result = $conn->query($sql);
 
       echo "<h2>Potted Plants</h2>";
-      echo "<div style='display: grid; grid-template-columns: repeat(4,1fr);'>";
+      echo "<div class='categories'>";
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
-          echo "<p>" . $row['product_name'] . "</p>";
-          echo "<p>" . $row['price'] . "</p>";
+          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
+          echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
         }
       }
@@ -45,13 +45,13 @@
       $sql = "SELECT * FROM product WHERE category_id = 2";
       $result = $conn->query($sql);
       echo "<h2>Bouquets</h2>";
-      echo "<div style='display: grid; grid-template-columns: repeat(4,1fr);'>";
+      echo "<div class='categories'>";
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
-          echo "<p>" . $row['product_name'] . "</p>";
-          echo "<p>" . $row['price'] . "</p>";
+          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
+          echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
         }
       }
