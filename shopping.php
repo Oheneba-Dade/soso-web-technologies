@@ -13,11 +13,22 @@
 
 <body>
   <div class="container">
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">Dua</a>
-        <div class="d-flex" role="search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="shopping.php" style="color: #165166;">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.php" style="color: #165166;">Cart</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -50,11 +61,13 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           $id = $row['product_id'];
+          echo "<a href='product.php?pid=$id'>";
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
-          echo "<a href='product.php?pid=$id' class='product-name'>" . $row['product_name'] . "</a>";
+          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
           echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
+          echo "</a>";
         }
       }
 
