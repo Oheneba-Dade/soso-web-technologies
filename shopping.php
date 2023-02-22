@@ -34,11 +34,13 @@
       echo "<div style='display: grid; grid-template-columns: repeat(4,1fr);'>";
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
+          // echo "<div class='floatCard'>";
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p>" . $row['product_name'] . "</p>";
           echo "<p>" . $row['price'] . "</p>";
           echo "</div>";
+          // echo "</div>";
         }
       }
       echo "</div>";
@@ -48,11 +50,15 @@
       echo "<div style='display: grid; grid-template-columns: repeat(4,1fr);'>";
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
+          // echo "<div class='floatCard'>";
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p>" . $row['product_name'] . "</p>";
           echo "<p>" . $row['price'] . "</p>";
           echo "</div>";
+          // echo "</div>";
+          
+
         }
       }
 
@@ -62,6 +68,9 @@
 
 
       ?>
+         <!-- <div class="div-img">
+   <img src='https://www.educative.io/static/imgs/logos/logoMarkWhite.png'>
+   <div> -->
     </main>
   </div>
 

@@ -63,6 +63,19 @@ footer a {
     height: 21em;
 }
 
+/* .floatCard{
+    transition: transform .9s;
+    width: 16em;
+    height:21em;
+    margin:0 auto;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.floatCard :hover{
+    transform:scale(1.1);
+    height:25em;
+} */
+
 .navbar-brand {
     font-family: 'Quintessential', cursive;
     font-size: 2rem;
