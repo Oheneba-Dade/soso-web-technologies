@@ -153,3 +153,8 @@ footer a {
     width: 20%;
     margin: auto;
 }
+
+/* change cart icon color to white */
+.cart-icon {
+    color: white;
+}
