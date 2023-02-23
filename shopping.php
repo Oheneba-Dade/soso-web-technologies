@@ -33,6 +33,7 @@
       </div>
     </nav>
     <main>
+      <input type="search" style="float: right;">
 
       <?php
       include('database/db_connections.php');
@@ -46,11 +47,13 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           $id = $row['product_id'];
-          echo "<div class='card'  >";
+          echo "<a class='shop-item' href='product.php?pid=$id'>";
+          echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
-          echo "<a href='product.php?pid=$id' class='product-name'>" . $row['product_name'] . "</a>";
+          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
           echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
+          echo "</a>";
         }
       }
       echo "</div>";
@@ -61,7 +64,7 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           $id = $row['product_id'];
-          echo "<a href='product.php?pid=$id'>";
+          echo "<a class='shop-item' href='product.php?pid=$id'>";
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p class='product-name'>" . $row['product_name'] . "</p>";
@@ -94,6 +97,22 @@
       <a href="">Email</a>
     </div>
   </footer>
+
+  <script>
+    const search = document.querySelector('input');
+    const cards = document.querySelectorAll('.shop-item');
+    search.addEventListener('keyup', (e) => {
+      const searchString = e.target.value.toLowerCase();
+      for (let card of cards) {
+        const title = card.querySelector('.product-name').textContent;
+        if (title.toLowerCase().includes(searchString)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      }
+    })
+  </script>
 
 </body>
 

@@ -48,7 +48,7 @@
         </div>
         <div>
           <img src="assets/hero_image.jpg" alt="hero image"
-            style=" width: 600px; height: 400px; border-radius: 30% 70% 77% 23% / 47% 55% 45% 53%; margin-top: 3em;">
+            style=" width: 550px; height: 400px; border-radius: 30% 70% 77% 23% / 47% 55% 45% 53%; margin-top: 3em;">
         </div>
       </section>
     </div>
@@ -83,7 +83,7 @@
       <a href="">See More</a>
 
       <h2>Reviews</h2>
-      <div style="display: flex;">
+      <div style="display: flex; margin-bottom: 5em;">
         <p class="reviews">"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident delectus magnam
           quibusdam aliquid commodi amet iste, sit soluta enim voluptates excepturi repellendus quis illum odio. Esse
           pariatur eum repellat tenetur."</p>

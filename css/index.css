@@ -56,8 +56,9 @@ a svg {
 
 #hero {
     width: 100%;
-    display: flex;
-    margin: 2em auto 1em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 1.5em;
     color: white;
 }
 
