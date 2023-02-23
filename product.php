@@ -74,6 +74,11 @@
             // send the product id and quantity value to the cart.php page
             window.location.href = "cart.php?pid=" + pid + "&quantity=" + quantity;
         });
+
+        // redirect to the shopping page when the continue shopping button is clicked
+        document.getElementById('alternate-green').addEventListener('click', function () {
+            window.location.href = "shopping.php";
+        });
     </script>
 
 </body>
