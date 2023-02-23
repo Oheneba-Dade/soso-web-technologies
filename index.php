@@ -36,7 +36,7 @@
       <section id="hero">
         <div>
           <h1>Home Of All Your <span class="green-highlight">Plant</span> Needs</h1>
-          <button>Shop Now</button>
+          <a href="shopping.php"> <button>Shop Now</button></a>
           <div style="display: flex;">
             <div class="analytics"> <span class="green-highlight analytics-head">250+</span><br><span
                 class="analytics-text">Deliveries</span></div>
