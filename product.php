@@ -57,12 +57,23 @@
         echo "<p>" . $row['description'] . "</p>";
         echo "<br>";
         echo "<br>";
-        echo "<a href=''><button id='alternate-green'>Continue Shopping</button></a>";
-        echo "<a href=''><button id='primary-green'>Add to Cart</button></a>";
+        echo "<button id='alternate-green'>Continue Shopping</button>";
+        echo "<button id='primary-green'>Add to Cart</button>";
         echo "<input type='number' name='quantity' id='quantity' min='1' max='10' value='1'>";
         echo "</div>";
 
         echo "</div>";
         ?>
+    </div>
+
+    <script>
+        // collect the product id and quantity value when the add to cart button is clicked
+        document.getElementById('primary-green').addEventListener('click', function () {
+            let pid = <?php echo $pid; ?>;
+            let quantity = document.getElementById('quantity').value;
+            // send the product id and quantity value to the cart.php page
+            window.location.href = "cart.php?pid=" + pid + "&quantity=" + quantity;
+        });
+    </script>
 
 </body>
