@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 21, 2023 at 07:43 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Host: 127.0.0.1
+-- Generation Time: Feb 24, 2023 at 09:25 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `cart` (
   `ip_address` varchar(50) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -43,7 +43,7 @@ CREATE TABLE `cart` (
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
@@ -51,7 +51,9 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (1, 'potted plants'),
-(2, 'bouquets');
+(2, 'bouquets'),
+(3, 'vases'),
+(4, 'watering_can');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,7 @@ CREATE TABLE `orders` (
   `user_id` int(11) DEFAULT NULL,
   `payment_id` int(11) DEFAULT NULL,
   `order_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,7 @@ CREATE TABLE `payment` (
   `payment_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `amount` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -88,34 +90,42 @@ CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) DEFAULT NULL,
   `product_name` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `price` double NOT NULL,
   `weight` varchar(20) NOT NULL,
   `picture_path` varchar(255) NOT NULL,
   `description` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `price`, `weight`, `picture_path`, `description`) VALUES
-(1, 1, 'Fruit of Accra', 0.24, '5 oz', 'assets/potted_plants/succulent.jpg', ''),
-(2, 1, 'Green Oheneba', 0.5, '3 oz', 'assets/potted_plants/potted_plant_short.png', ''),
-(3, 1, 'Senam\'s Disguise', 0.6, '2 oz', 'assets/potted_plants/otherpotted.png', ''),
-(4, 1, 'Fleur La Vie', 0.3, '5 oz', 'assets/potted_plants/long_pot.png', ''),
-(5, 1, 'Caleb\'s Lily', 0.45, '4 oz', 'assets/potted_plants/green_plant.png', ''),
-(7, 2, 'Senam\'s Disguises', 0.75, '2 oz', 'assets/bouquets/black_daisies.jpeg', ''),
-(8, 2, 'Opuntia Crowd', 0.85, '3 oz', 'assets/bouquets/bq_1.jpeg', ''),
-(9, 1, 'Kid with a Rose', 0.55, '2 oz', 'assets/potted_plants/2_pp.jpeg', ''),
-(10, 1, 'Kid with a Rose', 0.55, '2 oz', 'assets/potted_plants/2_pp.jpeg', ''),
-(11, 1, 'SAV Special', 0.42, '3 oz', 'assets/potted_plants/3_pp.jpeg', ''),
-(12, 1, 'Glover\'s La Vie', 0.52, '3 oz', 'assets/potted_plants/6_pp.jpeg', ''),
-(13, 2, 'Tay\'s World', 0.76, '4 oz', 'assets/bouquets/elizabeth\'s_mystery.jpeg', ''),
-(14, 2, 'Sampah\'s Delight', 0.9, '4 oz', 'assets/bouquets/flower_world.jpeg', ''),
-(15, 2, 'David\'s Magic', 0.85, '4 oz', 'assets/bouquets/lavender_surprise.jpeg', ''),
-(16, 2, 'Eli\'s World', 0.25, '5 oz', 'assets/bouquets/le_sonia.jpeg', ''),
-(17, 2, 'Akwasi\'s Activities', 0.56, '5 oz', 'assets/bouquets/prada.jpeg', ''),
-(18, 2, 'Kez by the Sea', 0.45, '4 oz', 'assets/bouquets/sena\'s_eyes.jpeg', '');
+INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `quantity`, `price`, `weight`, `picture_path`, `description`) VALUES
+(1, 1, 'Fruit of Accra', 0, 0.24, '5 oz', 'assets/potted_plants/succulent.jpg', ''),
+(2, 1, 'Green Oheneba', 12, 0.5, '3 oz', 'assets/potted_plants/potted_plant_short.png', ''),
+(3, 1, 'Senam\'s Disguise', 15, 0.6, '2 oz', 'assets/potted_plants/otherpotted.png', ''),
+(4, 1, 'Fleur La Vie', 11, 0.3, '5 oz', 'assets/potted_plants/long_pot.png', ''),
+(5, 1, 'Caleb\'s Lily', 2, 0.45, '4 oz', 'assets/potted_plants/green_plant.png', ''),
+(7, 2, 'Senam\'s Disguises', 4, 0.75, '2 oz', 'assets/bouquets/black_daisies.jpeg', ''),
+(8, 2, 'Opuntia Crowd', 6, 0.85, '3 oz', 'assets/bouquets/bq_1.jpeg', ''),
+(9, 1, 'Kid with a Rose', 7, 0.55, '2 oz', 'assets/potted_plants/2_pp.jpeg', ''),
+(11, 1, 'SAV Special', 8, 0.42, '3 oz', 'assets/potted_plants/3_pp.jpeg', ''),
+(12, 1, 'Glover\'s La Vie', 3, 0.52, '3 oz', 'assets/potted_plants/6_pp.jpeg', ''),
+(13, 2, 'Tay\'s World', 5, 0.76, '4 oz', 'assets/bouquets/elizabeth_mystery.jpeg', ''),
+(14, 2, 'Sampah\'s Delight', 14, 0.9, '4 oz', 'assets/bouquets/flower_world.jpeg', ''),
+(15, 2, 'David\'s Magic', 0, 0.85, '4 oz', 'assets/bouquets/lavender_surprise.jpeg', ''),
+(16, 2, 'Eli\'s World', 7, 0.25, '5 oz', 'assets/bouquets/le_sonia.jpeg', ''),
+(17, 2, 'Akwasi\'s Activities', 0, 0.56, '5 oz', 'assets/bouquets/prada.jpeg', ''),
+(18, 2, 'Kez by the Sea', 0, 0.45, '4 oz', 'assets/bouquets/sena_eyes.jpeg', ''),
+(19, 3, 'VAS 1', 10, 0.92, '6 oz', 'assets/vases/vase1.jpeg', ''),
+(20, 3, 'VAS 2', 16, 0.87, '7 oz', 'assets/vases/vase2.jpeg', ''),
+(21, 3, 'VAS 3', 0, 0.83, '6 oz', 'assets/vases/vase3.jpeg', ''),
+(22, 3, 'VAS 4', 13, 0.78, '7 oz', 'assets/vases/vase4.jpeg', ''),
+(23, 3, 'VAS 5', 9, 0.89, '6 oz', 'assets/vases/vase5.jpeg', ''),
+(24, 3, 'VAS 6', 5, 0.97, '7 oz', 'assets/vases/vase6.jpeg', ''),
+(25, 3, 'VAS 7', 0, 0.84, '6 oz', 'assets/vases/vase7.jpeg', ''),
+(26, 3, 'VAS 8', 6, 0.94, '7 oz', 'assets/vases/vase8.jpeg', '');
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,7 @@ INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `price`, `we
 CREATE TABLE `role` (
   `role_id` int(11) NOT NULL,
   `role_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `role`
@@ -149,7 +159,7 @@ CREATE TABLE `users` (
   `pword` varchar(100) DEFAULT NULL,
   `phone_number` varchar(15) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -210,6 +220,7 @@ ALTER TABLE `role`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`),
   ADD KEY `role_id` (`role_id`);
 
 --
@@ -220,7 +231,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -238,7 +249,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `role`
