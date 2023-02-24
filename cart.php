@@ -43,14 +43,56 @@
             }
             $_SESSION['cart'][$pid] = $quantity;
         }
+        include('database/db_connections.php');
+        $conn = OpenConn();
         foreach ($_SESSION['cart'] as $key => $value) {
-            echo $key . " " . $value;
+            //obtain product information from database
+            $sql = "SELECT * FROM product WHERE product_id = $key";
+            //execute query
+            $result = $conn->query($sql);
+            //check if there are any results
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                //echo all information in $row
+                echo "<div class='row'>";
+                echo "<div class='col-2'>";
+                echo "<img src=" . $row['picture_path'] . " alt='product image' class='img-fluid'>";
+                echo "</div>";
+                echo "<div class='col-2'>";
+                echo "<h3>" . $row['product_name'] . "</h3>";
+                echo "</div>";
+                echo "<div class='col-2'>";
+                //echo an input tyoe number with the value of the quantity
+                echo "<input id=" . 'input' . "$key" . " type='number' name='quantity' value=" . $value . " >";
+                echo "</div>";
+                echo "<div class='col-2'>";
+                echo "<h3 id=" . 'price' . "$key" . '>' . "" . $row['price'] . "Gp</h3>";
+                echo "</div>";
+                echo "<div class='col-2'>";
+                //echo the product of the input value and the price
+                echo "<h3 id=" . 'total' . "$key" . '>' . $row['price'] * $value . "Gp</h3>";
+                echo "</div>";
+            }
         }
-
-
 
         ?>
     </div>
+    <script>
+        let inputs = document.querySelectorAll("input[type='number']");
+        inputs.forEach(input => {
+            input.addEventListener('change', () => {
+                let inputId = input.id;
+                let correspondingTotal = 'total' + inputId.slice(5);
+                let correspondingPrice = 'price' + inputId.slice(5);
+                let total = document.getElementById(correspondingTotal).innerText;
+                let price = document.getElementById(correspondingPrice).innerText;
+                total = total.slice(0, -2);
+                price = price.slice(0, -2);
+                let newTotal = price * input.value;
+                document.getElementById(correspondingTotal).innerText = newTotal + "Gp";
+            })
+        })
+    </script>
 </body>
 
 </html>

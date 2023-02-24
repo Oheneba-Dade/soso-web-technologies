@@ -45,3 +45,25 @@ body {
     color: #165166;
     cursor: pointer;
 }
+
+.col-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="number"] {
+    width: 3rem;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #165166;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #165166;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #165166;
+}
