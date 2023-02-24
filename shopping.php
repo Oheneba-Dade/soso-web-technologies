@@ -101,18 +101,46 @@
     </main>
   </div>
 
-  <footer style="display: flex;">
-    <div class="container">
-      <p>Follow us on all our social media pages</p>
-      <a href="">Twitter</a>
-      <br>
-      <a href="">Linkedin</a>
-      <br>
-      <a href="">Instagram</a>
-      <br>
-      <a href="">Youtube</a>
-      <br>
-      <a href="">Email</a>
+  <footer>
+    <div class="content">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic">About us</div>
+          <p>Dua is a start up focused on meeting all your plant needs. </p>
+        </div>
+        <div class="lower">
+          <div class="topic">Contact us</div>
+          <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+          </div>
+          <div class="email">
+            <a href="#"><i class="fas fa-envelope"></i>dua@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="middle box">
+        <div class="topic">Our Services</div>
+        <div><a href="#">Potted Plants</a></div>
+        <div><a href="#">Bouquets</a></div>
+        <div><a href="#">Vases</a></div>
+      </div>
+      <div class="right box">
+        <div class="topic">Subscribe us</div>
+        <form action="#">
+          <input type="text" placeholder="Enter email address">
+          <input type="submit" name="" value="Send">
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>Copyright © 2020 Dua All rights reserved</p>
     </div>
   </footer>
 
