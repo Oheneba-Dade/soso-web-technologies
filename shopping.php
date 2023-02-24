@@ -74,6 +74,24 @@
         }
       }
 
+      echo "</div>";
+      $sql = "SELECT * FROM product WHERE category_id = 3";
+      $result = $conn->query($sql);
+      echo "<h2>Vases</h2>";
+      echo "<div class='categories'>";
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $id = $row['product_id'];
+          echo "<a class='shop-item' href='product.php?pid=$id'>";
+          echo "<div class='card'>";
+          echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
+          echo "<p class='product-name'>" . $row['product_name'] . "</p>";
+          echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
+          echo "</div>";
+          echo "</a>";
+        }
+      }
+
 
 
       CloseConn($conn);
