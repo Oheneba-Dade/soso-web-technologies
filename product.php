@@ -50,7 +50,7 @@
         $row = $result->fetch_assoc();
 
         echo "<div class='product'>";
-        echo "<img src='$row[picture_path]' alt=''>";
+        echo "<img src='$row[picture_path]' alt='' class='img-fluid'>";
         echo "<div class='product-details'>";
         echo "<h1>" . $row['product_name'] . "</h1>";
         echo "<h2>" . $row['price'] . "Gp" . "</h2>";
@@ -58,8 +58,15 @@
         echo "<br>";
         echo "<br>";
         echo "<button id='alternate-green'>Continue Shopping</button>";
-        echo "<button id='primary-green'>Add to Cart</button>";
-        echo "<input type='number' name='quantity' id='quantity' min='1' max='10' value='1'>";
+        if ($row['quantity'] == 0) {
+            echo "<button id='primary-green' disabled>Add to Cart</button>";
+        } else {
+            echo "<button id='primary-green'>Add to Cart</button>";
+        }
+        echo "<input type='number' name='quantity' id='quantity' min=0 max='$row[quantity]'>";
+        if ($row['quantity'] == 0) {
+            echo "<p style='color: red; margin-top: 1em;'>Out of Stock</p>";
+        }
         echo "</div>";
 
         echo "</div>";
