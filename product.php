@@ -63,7 +63,7 @@
         } else {
             echo "<button id='primary-green'>Add to Cart</button>";
         }
-        echo "<input type='number' name='quantity' id='quantity' min=0 max='$row[quantity]'>";
+        echo "<input type='number' name='quantity' id='quantity' value=0 min=0 max='$row[quantity]'>";
         if ($row['quantity'] == 0) {
             echo "<p style='color: red; margin-top: 1em;'>Out of Stock</p>";
         }
