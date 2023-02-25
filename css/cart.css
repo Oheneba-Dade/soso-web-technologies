@@ -68,7 +68,18 @@ h3 {
     color: #165166;
 }
 
-.item-list {
+.row {
     display: flex;
     align-items: center;
+}
+
+i {
+    color: #165166;
+    font-size: 2rem;
+    margin: 0 1rem;
+}
+
+i:hover {
+    cursor: pointer;
+    color: #98BF4A;
 }
