@@ -84,11 +84,11 @@
                     echo "<input id=" . 'input' . "$key" . " type='number' min=1 name='quantity' value=" . $value . " >";
                     echo "</div>";
                     echo "<div class='col-2'>";
-                    echo "<h3 id=" . 'price' . "$key" . '>' . "" . $row['price'] . "Gp</h3>";
+                    echo "<h3 id=" . 'price' . "$key" . '>' . "" . round($row['price'], 2) . "Gp</h3>";
                     echo "</div>";
                     echo "<div class='col-2'>";
                     //echo the product of the input value and the price
-                    echo "<h3 id=" . 'total' . "$key" . '>' . $row['price'] * $value . "Gp</h3>";
+                    echo "<h3 id=" . 'total' . "$key" . '>' . round($row['price'] * $value, 2) . "Gp</h3>";
                     echo "</div>";
                     echo "<div class='col-2'>";
                     //echo a bootstrap icon that will remove the item from the cart
@@ -114,7 +114,7 @@
                 total = total.slice(0, -2);
                 price = price.slice(0, -2);
                 let newTotal = price * input.value;
-                document.getElementById(correspondingTotal).innerText = newTotal + "Gp";
+                document.getElementById(correspondingTotal).innerText = newTotal.toFixed(2) + "Gp";
             })
         })
 
