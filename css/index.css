@@ -10,27 +10,27 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
+  height: 5px;
 }
 
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #165166;
-    border-radius: 10px;
+  box-shadow: inset 0 0 5px #165166;
+  border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #98BF4A;
-    border-radius: 10px;
+  background: #98BF4A;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #98BF4A;
+  background: #98BF4A;
 }
-
 
 main {
     height: 100vh;

@@ -10,6 +10,7 @@
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 
@@ -29,7 +30,6 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #98BF4A;
 }
-
 
 body {
     font-family: 'Poppins', sans-serif;

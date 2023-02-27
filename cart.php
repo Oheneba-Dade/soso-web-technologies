@@ -81,14 +81,14 @@
                     echo "</div>";
                     echo "<div class='col-2'>";
                     //echo an input tyoe number with the value of the quantity
-                    echo "<input id=" . 'input' . "$key" . " type='number' min=1 name='quantity' value=" . $value . " >";
+                    echo "<input id=" . 'input' . "$key" . " type='number' onkeydown='return false' min=1 max='$row[quantity]' name='quantity' value=" . $value . " >";
                     echo "</div>";
                     echo "<div class='col-2'>";
-                    echo "<h3 id=" . 'price' . "$key" . '>' . "" . round($row['price'], 2) . "Gp</h3>";
+                    echo "<h3 id=" . 'price' . "$key" . '>' . "" . number_format($row['price'], 2) . "Gp</h3>";
                     echo "</div>";
                     echo "<div class='col-2'>";
                     //echo the product of the input value and the price
-                    echo "<h3 id=" . 'total' . "$key" . '>' . round($row['price'] * $value, 2) . "Gp</h3>";
+                    echo "<h3 id=" . 'total' . "$key" . '>' . number_format($row['price'] * $value, 2) . "Gp</h3>";
                     echo "</div>";
                     echo "<div class='col-2'>";
                     //echo a bootstrap icon that will remove the item from the cart
@@ -117,6 +117,17 @@
                 document.getElementById(correspondingTotal).innerText = newTotal.toFixed(2) + "Gp";
             })
         })
+
+        //ensure that only numbers can be placed into input
+        inputs.forEach(input => {
+            input.addEventListener('keydown', (e) => {
+                let inputId = input.id.slice(5);
+                if (e.key === 'e' || e.key === 'E' || e.key === '+' || e.key === '-') {
+                    e.preventDefault();
+                }
+            })
+        })
+
 
         let deleteButtons = document.querySelectorAll(".bi-trash");
         deleteButtons.forEach(deleteButton => {

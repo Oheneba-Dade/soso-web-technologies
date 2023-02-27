@@ -51,7 +51,7 @@
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p class='product-name'>" . $row['product_name'] . "</p>";
-          echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
+          echo "<p class='product-details'>" . number_format($row['price'], 2) . "Gp • " . $row['weight'] . "</p>";
           echo "</div>";
           echo "</a>";
         }

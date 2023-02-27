@@ -53,7 +53,7 @@
         echo "<img src='$row[picture_path]' alt='' class='img-fluid'>";
         echo "<div class='product-details'>";
         echo "<h1>" . $row['product_name'] . "</h1>";
-        echo "<h2>" . $row['price'] . "Gp" . "</h2>";
+        echo "<h2>" . number_format($row['price'], 2) . "Gp" . "</h2>";
         echo "<p>" . $row['description'] . "</p>";
         echo "<br>";
         echo "<br>";
@@ -63,7 +63,7 @@
         } else {
             echo "<button id='primary-green'>Add to Cart</button>";
         }
-        echo "<input type='number' name='quantity' id='quantity' value=0 min=0 max='$row[quantity]'>";
+        echo "<input type='number' name='quantity' id='quantity' onkeydown='return false' value=1 min=1 max='$row[quantity]'>";
         if ($row['quantity'] == 0) {
             echo "<p style='color: red; margin-top: 1em;'>Out of Stock</p>";
         }
@@ -79,13 +79,16 @@
             let pid = <?php echo $pid; ?>;
             let quantity = document.getElementById('quantity').value;
             // send the product id and quantity value to the cart.php page
-            window.location.href = "cart.php?pid=" + pid + "&quantity=" + quantity;
+            if (quantity != 0) {
+                window.location.href = "cart.php?pid=" + pid + "&quantity=" + quantity;
+            }
         });
 
         // redirect to the shopping page when the continue shopping button is clicked
         document.getElementById('alternate-green').addEventListener('click', function () {
             window.location.href = "shopping.php";
         });
+
     </script>
 
 </body>
