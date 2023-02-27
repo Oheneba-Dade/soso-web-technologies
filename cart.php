@@ -115,6 +115,9 @@
                 price = price.slice(0, -2);
                 let newTotal = price * input.value;
                 document.getElementById(correspondingTotal).innerText = newTotal.toFixed(2) + "Gp";
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', `cartUpdate.php?pid=${inputId}&quantity=${input.value}`, true);
+                xhr.send();
             })
         })
 
