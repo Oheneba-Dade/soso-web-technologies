@@ -144,14 +144,16 @@ h2 {
     padding-top: 2em;
 } */
 
-footer a {
-    color: white;
-    text-decoration: underline;
-}
+
 
 .carousel-img {
     width: 20%;
     margin: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
 }
 
 footer{
@@ -161,6 +163,7 @@ footer{
   bottom: 0;
   left: 0;
   background: #165166;
+  /* background: black; */
 }
 footer .content{
   max-width: 1350px;
@@ -191,13 +194,19 @@ footer .content .lower .topic{
   margin: 24px 0 5px 0;
 }
 footer .content .lower i{
-  padding-right: 16px;
+  padding-right: 0px;
 }
+
+footer .content .lower a{
+  text-decoration: none;
+}
+
 footer .content .middle{
   padding-left: 80px;
 }
 footer .content .middle a{
   line-height: 32px;
+  text-decoration: none;
 }
 footer .content .right input[type="text"]{
   height: 45px;
@@ -227,7 +236,7 @@ footer .content .right input[type="submit"]{
   background: none;
   color:  #98BF4A;
 }
-footer .content .media-icons a{
+/* footer .content .media-icons a{
   font-size: 16px;
   height: 45px;
   width: 45px;
@@ -236,11 +245,14 @@ footer .content .media-icons a{
   line-height: 43px;
   border-radius: 5px;
   border: 2px solid #222222;
-  margin: 30px 5px 0 0;
+  margin: 30px 5px 0 20px;
+  position: relative;
+  left: 3%;
   transition: all 0.3s ease;
-}
+
+} */
 .content .media-icons a:hover{
-  border-color: #eb2f06;
+  border-color: #98BF4A;
 }
 footer .bottom{
   width: 100%;
@@ -248,14 +260,14 @@ footer .bottom{
   color: #d9d9d9;
   padding: 0 40px 5px 0;
 }
-footer .bottom a{
+/* footer .bottom a{
   color: #eb2f06;
-}
+} */
 footer a{
   transition: all 0.3s ease;
 }
 footer a:hover{
-  color: #eb2f06;
+  color: #98BF4A
 }
 @media (max-width:1100px) {
   footer .content .middle{
@@ -282,3 +294,4 @@ footer a:hover{
     padding-left: 0;
   }
 }
+
