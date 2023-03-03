@@ -1,0 +1,15 @@
+input[type="submit"] {
+    display: block;
+}
+
+.navbar-brand {
+    font-family: 'Quintessential', cursive;
+    font-size: 2rem;
+    color: #165166;
+    font-weight: 700;
+}
+
+.navbar-brand:hover {
+    color: #165166;
+    cursor: pointer;
+}

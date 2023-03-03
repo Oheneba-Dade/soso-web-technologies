@@ -96,3 +96,8 @@ input[type="number"] {
     font-weight: 700;
     color: #165166;
 }
+
+.description {
+    padding: 1em;
+    color: #165166;
+}

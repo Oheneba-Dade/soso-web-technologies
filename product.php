@@ -28,6 +28,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php" style="color: #165166;">Cart</a>
                         </li>
+                        <li class="nav-item">
+                            <?php
+                            session_start();
+                            if (isset($_SESSION['userid'])) {
+                                echo '<a class="nav-link" href="logout.php">Logout</a>';
+                            } else {
+                                echo '<a class="nav-link" href="login.php">Login</a>';
+                            }
+                            ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +64,7 @@
         echo "<div class='product-details'>";
         echo "<h1>" . $row['product_name'] . "</h1>";
         echo "<h2>" . number_format($row['price'], 2) . "Gp" . "</h2>";
-        echo "<p>" . $row['description'] . "</p>";
+        echo "<p class='description'>" . $row['description'] . "</p>";
         echo "<br>";
         echo "<br>";
         echo "<button id='alternate-green'>Continue Shopping</button>";
