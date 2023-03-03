@@ -5,8 +5,9 @@ This is an E-Commerce Site For a Plant Company known as Dua which is trying to r
 
 ## Stack
 
-Frontend - HTML, CSS, JavaScript
-Backend/Database - PHP, SQL
+- Frontend: HTML, CSS, JavaScript
+- Backend/Database: PHP, SQL
+- Libraries: Bootstrap, PHPMailer
 
 ## Instructions on How to Set Up The Live Server
 - Make sure you have MySql,Apache and phpMyAdmin on the ubuntu server
