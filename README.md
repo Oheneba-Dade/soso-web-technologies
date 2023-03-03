@@ -15,4 +15,5 @@ Backend/Database - PHP, SQL
 
 1. Oheneba Dade
 2. Omar Basheer
-3. Selom Arcmann-Ackummey (can be contacted to start the VM) Glover-Tay
+3. Selom Arcmann-Ackummey (can be contacted to start the VM) 
+4. Senam Glover-Tay
