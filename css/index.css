@@ -56,7 +56,8 @@ a svg {
 
 #hero {
     width: 100%;
-    display: flex;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
     margin: 2em auto 1em;
     color: white;
 }
@@ -281,4 +282,14 @@ footer a:hover{
   footer .content .middle{
     padding-left: 0;
   }
+}
+
+@media(max-width: 993px) {
+    #round_img {
+        display: none;
+    }
+
+    #hero {
+      grid-template-columns: 1fr;
+    }
 }

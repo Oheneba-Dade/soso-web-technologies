@@ -1,3 +1,12 @@
+<?php
+// session_start();
+error_reporting(E_ERROR | E_PARSE);
+if ($_SESSION['urrole'] == 1) {
+  header("Location: shoppingAdmin.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,12 +37,23 @@
             <li class="nav-item">
               <a class="nav-link" href="cart.php" style="color: #165166;">Cart</a>
             </li>
+            <li class="nav-item">
+              <?php
+              session_start();
+              if (isset($_SESSION['userid'])) {
+                echo '<a class="nav-link" href="logout.php">Logout</a>';
+              } else {
+                echo '<a class="nav-link" href="login.php">Login</a>';
+              }
+              ?>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
     <main>
-      <input type="search" style="float: right;">
+      <input type="search" style="float: right; padding-left: 1em; border-radius: 10px;"
+        placeholder="search for item...">
 
       <?php
       include('database/db_connections.php');
@@ -51,7 +71,7 @@
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p class='product-name'>" . $row['product_name'] . "</p>";
-          echo "<p class='product-details'>" . number_format($row['price'], 2) . "Gp • " . $row['weight'] . "</p>";
+          echo "<p class='product-details'>" . number_format($row['price'], 2) . "Gp • " . $row['weight'] . " oz" . "</p>";
           echo "</div>";
           echo "</a>";
         }
@@ -68,7 +88,7 @@
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p class='product-name'>" . $row['product_name'] . "</p>";
-          echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
+          echo "<p class='product-details'>" . number_format($row['price'], 2) . "Gp • " . $row['weight'] . " oz" . "</p>";
           echo "</div>";
           echo "</a>";
         }
@@ -86,7 +106,7 @@
           echo "<div class='card'>";
           echo "<img src='$row[picture_path]' alt='' style='height: 70%;'>";
           echo "<p class='product-name'>" . $row['product_name'] . "</p>";
-          echo "<p class='product-details'>" . $row['price'] . "Gp • " . $row['weight'] . "</p>";
+          echo "<p class='product-details'>" . number_format($row['price'], 2) . "Gp • " . $row['weight'] . " oz" . "</p>";
           echo "</div>";
           echo "</a>";
         }
@@ -94,14 +114,14 @@
 
 
 
-      CloseConn($conn); 
+      CloseConn($conn);
 
 
       ?>
     </main>
   </div>
 
-  <footer>
+  <!-- <footer>
     <div class="content">
       <div class="left box">
         <div class="upper">
@@ -142,7 +162,7 @@
     <div class="bottom">
       <p>Copyright © 2020 Dua All rights reserved</p>
     </div>
-  </footer>
+  </footer> -->
 
   <script>
     const search = document.querySelector('input');

@@ -84,3 +84,32 @@ i:hover {
     cursor: pointer;
     color: #98BF4A;
 }
+
+#centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.bi-emoji-frown {
+    font-size: 5rem;
+    color: #98BF4A;
+}
+
+.alternate-green {
+    border: 2px solid #98BF4A;
+    color: #98BF4A;
+    background-color: white;
+}
+
+.primary-green {
+    border: none;
+    color: white;
+    background-color: #98BF4A;
+}
+
+button {
+    padding: 0.5em;
+}

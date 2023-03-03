@@ -1,0 +1,43 @@
+.card {
+    /* padding-bottom: 2em; */
+}
+
+i {
+    font-size: 1.3rem;
+    width: 10%;
+    color: #165166;
+    cursor: pointer;
+}
+
+.bi-trash:hover {
+    color: red;
+}
+
+.bi-camera:hover,
+.bi-pencil-square:hover {
+    color: #98BF4A;
+}
+
+.button {
+    background: #98BF4A;
+    color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 10px;
+}
+
+.bi-plus {
+    color: white;
+}
+
+.navbar-brand {
+    font-family: 'Quintessential', cursive;
+    font-size: 2rem;
+    color: #165166;
+    font-weight: 700;
+}
+
+.navbar-brand:hover {
+    color: #165166;
+    cursor: pointer;
+}

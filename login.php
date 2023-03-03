@@ -1,65 +1,62 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <title>Log In - Dua</title>
-    <link rel="stylesheet" href="css/login.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/login.css" />
+
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
-
 <body>
+  <div class="container">
+    <header>Login</header>
+    <form id="logform">
 
 
-    <div class="container">
-        <div class="form-container">
-            <div class="header">
-                <p class="logo">Dua</p>
-                <p class="heading" id="trial">Log In</p>
-            </div>
-
-
-            <form name="form" action="process.php" method="POST">
-                <div class="inputs">
-
-                    <div class="inputfield">
-                        <input type="text" placeholder="Username" name="uname" id="uname" required>
-                    </div>
-
-                    <div class="inputfield">
-                        <input type="email" placeholder="Email" name="email" id="email" required>
-                    </div>
-
-                    <div class="inputfield">
-                        <input type="password" placeholder="Password" name="pass1" id="pass" required>
-                    </div>
-
-                    <div class="inputfield">
-                        <input type="password" placeholder="Confirm Password" name="pass2" id="pass2" required>
-                    </div>
-
-
-                    <div class="btn-field">
-                        <input id="signin" type="submit" value="Submit"
-                            onclick="validateEmail(document.form.email);validatePass(document.form.password)">
-                    </div>
-
-                    <p class="noaccount">Already have an account? Log in
-                        <a href="login.php">here</a>
-                    </p>
-
-                </div>
-            </form>
+      <div class="field email-field" id="email-field">
+        <div class="input-field">
+          <input type="email" name="logemail" placeholder="Email" class="email" id="emailInput" />
         </div>
-    </div>
+        <span class="error email-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">Please enter a valid email</p>
+        </span>
+      </div>
 
-    <script type="text/javascript" src="register.js"></script>
 
+
+      <div class="field create-password">
+        <div class="input-field">
+          <input type="password" name="logpass" placeholder="Enter password" class="password" />
+          <i class="bx bx-hide show-hide"></i>
+        </div>
+        <span class="error password-error">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="error-text">
+            Please enter atleast 8 character with number, symbol, small and
+            capital letter.
+          </p>
+        </span>
+      </div>
+
+
+      <div class="input-field button">
+        <input type="button" name="register" value="Submit" id="btn" />
+      </div>
+
+      <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+
+  </div>
+
+
+  <script src="js/login.js"></script>
 </body>
 
 </html>

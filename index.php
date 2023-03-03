@@ -36,6 +36,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="cart.php" style="color: white;">Cart</a>
               </li>
+              <li class="nav-item">
+                <?php
+                session_start();
+                if (isset($_SESSION['userid'])) {
+                  echo '<a class="nav-link" href="logout.php" style="color: white;">Logout</a>';
+                } else {
+                  echo '<a class="nav-link" href="login.php" style="color: white;">Login</a>';
+                }
+                ?>
+              </li>
             </ul>
           </div>
         </div>
@@ -53,9 +63,9 @@
                 class="analytics-text">Lives Changed</span></div>
           </div>
         </div>
-        <div>
-          <img src="assets/hero_image.jpg" alt="hero image"
-            style=" width: 600px; height: 400px; border-radius: 30% 70% 77% 23% / 47% 55% 45% 53%; margin-top: 3em;">
+        <div id="round_img">
+          <img src="assets/hero_image.jpg" alt="hero image" class="img-fluid"
+            style="height: 400px; border-radius: 30% 70% 77% 23% / 47% 55% 45% 53%; margin-top: 3em;">
         </div>
       </section>
     </div>
@@ -112,22 +122,8 @@
     </div>
   </section>
 
-  <!-- <footer style="display: flex;">
-    <div class="container">
-      <p>Follow us on all our social media pages</p>
-      <a href="">Twitter</a>
-      <br>
-      <a href="">Linkedin</a>
-      <br>
-      <a href="">Instagram</a>
-      <br>
-      <a href="">Youtube</a>
-      <br>
-      <a href="">Email</a>
-    </div>
-  </footer> -->
 
-  <footer>
+  <!-- <footer>
     <div class="content">
       <div class="left box">
         <div class="upper">
@@ -168,7 +164,7 @@
     <div class="bottom">
       <p>Copyright © 2020 Dua All rights reserved</p>
     </div>
-  </footer>
+  </footer> -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
